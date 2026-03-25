@@ -49,7 +49,7 @@ docker compose up -d --build
 - `POST /api/games/{game_id}/turn` 推进回合（自动快照）
 - `GET /api/games/{game_id}/snapshots?player_id=...` 回合历史
 
-## Ubuntu 24 云服务器部署建议
+## 云服务器部署建议
 
 1. 安装 Docker 与 Compose 插件。
 2. 上传项目并配置 `.env`。
@@ -60,4 +60,3 @@ docker compose up -d --build
 
 - 当前版本无账号系统，使用前端 `localStorage` 里的 `player_id` 识别单玩家。
 - 每回合会按预算估算 token，超过预算时会拒绝请求。
-- 敏感词和安全过滤未启用（按需求暂不实现）。
