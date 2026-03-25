@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLG AI 对话战局</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>SLG AI 对话战局</h1>
+      <p>单人策略叙事 | OpenAI 兼容接口 | 云端存档与回合回放</p>
+      <div class="meta">玩家 ID: <code id="playerId"></code></div>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>创建新战局</h2>
+        <form id="createGameForm">
+          <label>战局标题<input id="title" type="text" required value="我的新战局" /></label>
+          <label>势力偏好<input id="factionStyle" type="text" required placeholder="海权帝国 / 草原骑兵 / 工业联盟" /></label>
+          <label>策略偏好<input id="strategyStyle" type="text" required placeholder="稳健发展 / 闪击扩张 / 外交平衡" /></label>
+          <label>叙事偏好<input id="narrativeStyle" type="text" required placeholder="史诗风 / 写实风 / 阴谋政治" /></label>
+          <label>补充说明<textarea id="extraNotes" rows="3" placeholder="可写世界观限制、禁用元素、节奏要求"></textarea></label>
+          <button type="submit">创建战局</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <h2>我的存档（不限槽位）</h2>
+          <button id="refreshGamesBtn" type="button">刷新列表</button>
+        </div>
+        <ul id="gamesList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>当前战局</h2>
+        <div id="gameInfo" class="panel muted">请先创建或选择一个战局。</div>
+      </section>
+
+      <section class="card">
+        <h2>执行回合</h2>
+        <form id="playTurnForm">
+          <label>回合指令<textarea id="turnAction" rows="4" placeholder="例如：优先发展钢铁工业，同时秘密接触北方城邦建立互不侵犯条约"></textarea></label>
+          <button type="submit">提交回合</button>
+        </form>
+        <p class="hint">后端已设置单回合 token 预算保护（约 20000）。</p>
+      </section>
+
+      <section class="card">
+        <h2>回合快照（自动记录）</h2>
+        <div id="snapshots" class="timeline"></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span id="status">Ready.</span>
+    </footer>
+  </div>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+:root {
+  --bg: #f3f0e8;
+  --ink: #17212f;
+  --card: #fffaf0;
+  --line: #d7c9a5;
+  --brand: #835f0f;
+  --brand-ink: #fff6dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 10%, #fff8dd, #f3f0e8 55%);
+  color: var(--ink);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f7eecf, #f5f2e3);
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+}
+
+.meta {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.layout {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #b59d62;
+  padding: 9px 10px;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: none;
+  font-weight: 700;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.row button {
+  width: auto;
+  padding: 8px 12px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 8px 0;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.list button {
+  width: auto;
+  padding: 6px 10px;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 100px;
+  white-space: pre-wrap;
+}
+
+.muted {
+  color: #576274;
+}
+
+.timeline {
+  display: grid;
+  gap: 10px;
+  max-height: 360px;
+  overflow: auto;
+}
+
+.snap {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffcf2;
+  padding: 10px;
+}
+
+.snap h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.snap pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #6f5f3a;
+}
+
+.foot {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 12px;
+  }
+}
